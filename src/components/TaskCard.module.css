@@ -1,0 +1,156 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+}
+
+.completed {
+  opacity: 0.55;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkboxLabel {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.customCheckbox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.checkbox:checked + .customCheckbox {
+  background: var(--accent);
+  border-color: var(--accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%230a0a0a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M3 8l3.5 3.5L13 4.5'/%3E%3C/svg%3E");
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.low {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.medium {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.high {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+}
+
+.description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 2px;
+  flex-wrap: wrap;
+}
+
+.dueDate {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.overdue {
+  color: var(--accent-text);
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+}
+
+.editBtn, .deleteBtn {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.editBtn {
+  color: var(--text-secondary);
+  background: var(--surface-soft);
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.editBtn:hover {
+  color: var(--text-primary);
+}
+
+.deleteBtn {
+  color: #0a0a0a;
+  background: var(--accent);
+  border-color: var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border-left: none;
+}
+
+.deleteBtn:hover {
+  opacity: 0.88;
+}

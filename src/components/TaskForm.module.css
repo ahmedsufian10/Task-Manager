@@ -1,0 +1,138 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+  overflow-y: auto;
+}
+
+.form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  max-width: 460px;
+  width: 100%;
+  animation: slideUp 0.2s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  gap: 14px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.required {
+  color: var(--accent-text);
+}
+
+.input, .textarea, .select {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--surface-soft);
+  transition: border-color 0.2s ease;
+  width: 100%;
+}
+
+.textarea {
+  resize: vertical;
+  font-family: var(--font-body);
+}
+
+.input:focus, .textarea:focus, .select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.inputError {
+  border-color: var(--accent);
+}
+
+.errorText {
+  font-size: 11px;
+  color: var(--accent-text);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.cancelBtn {
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: var(--surface-soft);
+  transition: color 0.2s ease;
+}
+
+.cancelBtn:hover {
+  color: var(--text-primary);
+}
+
+.saveBtn {
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  font-weight: 500;
+  font-size: 13px;
+  color: #0a0a0a;
+  background: var(--accent);
+  transition: opacity 0.2s ease;
+}
+
+.saveBtn:hover {
+  opacity: 0.88;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
